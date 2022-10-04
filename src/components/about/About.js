@@ -1,21 +1,24 @@
 import React from "react";
 import "./About.css";
+import imgCv from "./../../media/imgCv.jpg"
 
 const About = () => {
   return (
-    <div className="about-container">
+    <div className="about-container" id="about">
       <div className="about-desc">
-        <h3>Let me tell you something about me</h3>
+        <h3>About me</h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis
-          provident inventore quod voluptates sequi. Quis, necessitatibus omnis
-          iusto perferendis dolores voluptate et dolorum inventore autem nemo,
-          quos eveniet magni nesciunt.
+          Soy estudiante de Ingeniería en
+          Sistemas. Interés constante por
+          aprender y desarrollar con nuevas
+          tecnologías en IT. Trabajo en
+          equipo, me gusta compartir e
+          intercambiar conocimientos.
         </p>
       </div>
       <div className="about-img">
         <img
-          src="https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_960_720.jpg"
+          src={imgCv}
           alt="about"
         />
       </div>
