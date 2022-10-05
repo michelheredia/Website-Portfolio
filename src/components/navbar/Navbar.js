@@ -38,7 +38,7 @@ const Navbarr = ({ isScrolling }) => {
           <Link onClick={handleToggle} to="info" spy={true} smooth={true} offset={-80} duration={500}>Info</Link>
         </li>
         <li onClick={toTheButoom} >
-          <a >Contact</a>
+          <a >Contact</a> {/*add href */}
         </li>
       </ul>
       <button className="btn-menu" onClick={handleToggle}>
