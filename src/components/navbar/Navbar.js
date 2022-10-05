@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 
 import { Link } from "react-scroll";
 
 const Navbarr = ({ isScrolling }) => {
 
+  const [active, setActive] = useState("null");
+
+  const handleToggle = () => {
+    setActive(!active);
+  };
+
   const toTheTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
   const toTheButoom = () => {
     window.scrollTo({ top: 10000, left: 0, behavior: "smooth" });
+    handleToggle();
   };
 
   return (
@@ -17,26 +24,26 @@ const Navbarr = ({ isScrolling }) => {
       <div className="navbar-logo" onClick={toTheTop}>
         MH
       </div>
-      <ul className="ul-items">
+      <ul className={active ? "ul-items" : "ul-items ul-items_visible"}>
         <li >
-          <Link to="cover" spy={true} smooth={true} offset={0} duration={500}>Cover</Link>
+          <Link onClick={handleToggle} to="cover" spy={true} smooth={true} offset={0} duration={500}>Cover</Link>
         </li>
         <li >
-         <Link to="about" spy={true} smooth={true} offset={-80} duration={500}>About</Link>
+         <Link onClick={handleToggle} to="about" spy={true} smooth={true} offset={-80} duration={500}>About</Link>
         </li>
         <li >
-          <Link to="slider" spy={true} smooth={true} offset={-80} duration={500}>Slider</Link>
+          <Link onClick={handleToggle} to="slider" spy={true} smooth={true} offset={-80} duration={500}>Slider</Link>
         </li>
         <li >
-          <Link to="info" spy={true} smooth={true} offset={-80} duration={500}>Info</Link>
+          <Link onClick={handleToggle} to="info" spy={true} smooth={true} offset={-80} duration={500}>Info</Link>
         </li>
-        <li onClick={toTheButoom}>
+        <li onClick={toTheButoom} >
           <a >Footer</a>
         </li>
       </ul>
-      <span className="btn-menu">
+      <button className="btn-menu" onClick={handleToggle}>
         <i className="fa fa-bars"> </i>
-      </span>
+      </button>
     </nav>
       
   );
