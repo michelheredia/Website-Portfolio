@@ -22,9 +22,12 @@
   cursor: pointer;
 }
 
-.slide-container > img {
-  object-fit: contain;
+.slide-container > a> img {
+  object-fit: cover;
+  object-position: center center;
   transition: all 0.2s ease-in-out;
+  width: 100%;
+  height: auto;
 }
 
 .slide-container:hover > img {

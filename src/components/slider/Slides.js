@@ -1,30 +1,35 @@
 import React from "react";
 import "./Slider.css";
+import imgTateti from "./../../media/imgTateti.jpg"
+import imgCrud from "./../../media/imgCrud.jpg"
+import imgWebsite from "./../../media/imgWebsite.jpg"
 
 const slidesInfo = [
   {
-    src:
-      "https://cdn.pixabay.com/photo/2016/12/19/08/39/mobile-phone-1917737_960_720.jpg",
+    src: imgTateti,
     alt: "Project 1",
-    desc: "Project 1",
+    desc: "Ta-Te-Ti",
+    href: "https://michelheredia.github.io/ta-te-ti/",
   },
   {
-    src:
-      "https://cdn.pixabay.com/photo/2017/10/31/19/05/web-design-2906159_960_720.jpg",
+    src: imgCrud,
     alt: "Project 2",
-    desc: "Project 2",
+    desc: "CRUD",
+    href: "https://github.com/michelheredia/crud-react",
   },
   {
-    src:
-      "https://cdn.pixabay.com/photo/2015/02/05/08/06/macbook-624707_960_720.jpg",
+    src: imgWebsite,
     alt: "Project 3",
-    desc: "Project 3",
+    desc: "Portfolio",
+    href: "https://michelheredia.github.io/Website-Portfolio/",
   },
 ];
 
 const slides = slidesInfo.map((slide) => (
   <div className="slide-container">
-    <img src={slide.src} alt={slide.alt} />
+    <a href={slide.href}>
+      <img src={slide.src} alt={slide.alt} />
+    </a>
     <div className="slide-desc">
       <span>{slide.desc}</span>
     </div>
