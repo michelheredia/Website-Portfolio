@@ -14,10 +14,10 @@ const Navbarr = ({ isScrolling }) => {
   const toTheTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
-  const toTheButoom = () => {
+  /*const toTheButoom = () => {
     window.scrollTo({ top: 10000, left: 0, behavior: "smooth" });
     handleToggle();
-  };
+  };*/
 
   return (
    <nav className={`navbar ${isScrolling > 20 ? "scrolling" : null}`}>
@@ -26,19 +26,20 @@ const Navbarr = ({ isScrolling }) => {
       </div>
       <ul className={active ? "ul-items" : "ul-items ul-items_visible"}>
         <li >
-          <Link onClick={handleToggle} to="cover" spy={true} smooth={true} offset={0} duration={500}>Home</Link>
+          <Link onClick={handleToggle} to="cover" spy={true} smooth={true} offset={0} duration={800}>Home</Link>
         </li>
         <li >
-         <Link onClick={handleToggle} to="about" spy={true} smooth={true} offset={-80} duration={500}>About</Link>
+         <Link onClick={handleToggle} to="about" spy={true} smooth={true} offset={-80} duration={800}>About</Link>
         </li>
         <li >
-          <Link onClick={handleToggle} to="slider" spy={true} smooth={true} offset={-80} duration={500}>Projects</Link>
+          <Link onClick={handleToggle} to="slider" spy={true} smooth={true} offset={-80} duration={800}>Projects</Link>
         </li>
         <li >
-          <Link onClick={handleToggle} to="info" spy={true} smooth={true} offset={-80} duration={500}>Info</Link>
+          <Link onClick={handleToggle} to="info" spy={true} smooth={true} offset={-80} duration={800}>Info</Link>
         </li>
-        <li onClick={toTheButoom} >
-          <a >Contact</a> {/*add href */}
+        <li >
+          <Link onClick={handleToggle} to="info" spy={true} smooth={true} offset={220} duration={800}>Contact</Link>
+         {/* <a >Contact</a> add href */}
         </li>
       </ul>
       <button className="btn-menu" onClick={handleToggle}>
